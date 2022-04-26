@@ -15,10 +15,10 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
 
 
         if (fragment == null) {
-            fragmentManager.commit {
-                setReorderingAllowed(true)
-                add <Fragment>(R.id.fragment_container)
-            }
+            fragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, createFragment())
+                .commit()
         }
     }
 

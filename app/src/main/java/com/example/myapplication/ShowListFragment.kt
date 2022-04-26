@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication.databinding.FragmentShowListBinding
 
+
 class ShowListFragment : Fragment() {
-    lateinit var binding:FragmentShowListBinding
+    lateinit var binding:com.example.myapplication.databinding.FragmentShowListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,7 +29,7 @@ class ShowListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val testList= arrayListOf("razie","fateme","maryam")
+        val testList= arrayListOf("razie","fateme","maryam","zahre","razie","fateme","maryam","zahre","razie","fateme","maryam","zahre")
         binding.rvTestList.adapter=ListAdapter(testList)
 
 
