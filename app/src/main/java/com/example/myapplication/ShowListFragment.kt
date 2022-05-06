@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.myapplication.databinding.FragmentShowListBinding
 
 
@@ -30,8 +31,12 @@ class ShowListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val testList= arrayListOf("razie","fateme","maryam","zahre","razie","fateme","maryam","zahre","razie","fateme","maryam","zahre")
-        binding.rvTestList.adapter=ListAdapter(testList)
-
+        val adapter=ListAdapter2(){
+            Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
+            //testList.remove(it)
+        }
+        binding.rvTestList.adapter=adapter
+        adapter.submitList(testList)
 
     }
 
